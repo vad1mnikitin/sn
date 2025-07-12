@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Никитин Вадим Сергеевич | Профессиональные инженерные решения</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #005f73, #0a9396);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://a.imgfoto.host/2025/06/10/i-2.jpeg') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #005f73;
+            border-bottom: 2px solid #0a9396;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        
+        h3 {
+            color: #005f73;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-img {
+            width: 100%;
+            height: 280px; /* Увеличена высота */
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        /* Специальные стили для увеличенных фото */
+        .large-photo {
+            height: 320px; /* Ещё больше для электрики и септиков */
+        }
+        
+        .doc-img {
+            object-fit: contain;
+            background-color: #f8f9fa;
+            padding: 15px;
+            height: 300px; /* Увеличена высота документов */
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .work-hours {
+            background: #e9f7fe;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px auto;
+            text-align: center;
+            border-left: 4px solid #0a9396;
+            max-width: 500px;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .contact-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #005f73;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #003d4d;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background: #343a40;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            max-width: 600px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #005f73;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .privacy-check {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .privacy-link {
+            color: #005f73;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        
+        .privacy-link:hover {
+            text-decoration: underline;
+        }
+        
+        .submit-btn {
+            background: #005f73;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: #003d4d;
+        }
+        
+        .form-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #005f73;
+        }
+        
+        .policy-link {
+            color: #6c757d;
+            text-decoration: underline;
+            margin-top: 15px;
+            display: inline-block;
+        }
+        
+        .policy-link:hover {
+            color: #005f73;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 20px;
+            }
+            
+            .service-img,
+            .large-photo,
+            .doc-img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <div class="container">
+                <h1>Никитин Вадим Сергеевич</h1>
+                <p class="tagline">Профессиональные инженерные решения для вашего дома</p>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section id="about">
+            <h2>Обо мне</h2>
+            <p>Я, Никитин Вадим Сергеевич, профессиональный специалист с 15-летним опытом работы в области инженерных коммуникаций. Моя специализация - комплексные решения для водоснабжения, отопления и электрики частных домов и коммерческих помещений.</p>
+            <p>Работаю с современными материалами и оборудованием, соблюдаю все технические нормы и стандарты безопасности. Предоставляю гарантию на все виды работ.</p>
+            
+            <div class="work-hours">
+                <h3>График работы</h3>
+                <p>Пн-Пт: с 9:00 до 18:00</p>
+                <p>Сб-Вс: по предварительной договорённости</p>
+            </div>
+        </section>
+        
+        <section id="services">
+            <h2>Мои услуги</h2>
+            <div class="services-grid">
+                <!-- Установка инженерной сантехники -->
+                <div class="service-card">
+                    <img src="https://a.imgfoto.host/2025/06/10/i-2.jpeg" 
+                         alt="Установка инженерной сантехники" 
+                         class="service-img">
+                    <div class="service-content">
+                        <h3>Установка инженерной сантехники</h3>
+                        <p>Профессиональный монтаж сложных сантехнических систем, коллекторных разводок    и фильтрационных станций.</p>
+                    </div>
+                </div>
+                
+                <!-- Сборка котельной -->
+                <div class="service-card">
+                    <img src="https://a.imgfoto.host/2025/06/10/og_og_1548608621294650731.jpeg" 
+                         alt="Сборка котельной" 
+                         class="service-img">
+                    <div class="service-content">
+                        <h3>Сборка котельной</h3>
+                        <p>Комплексная установка и настройка газовых, электрических и твердотопливных котлов с обвязкой и подключением к системе отопления.</p>
+                    </div>
+                </div>
+                
+                <!-- Разводка тёплых полов -->
+                <div class="service-card">
+                    <img src="https://a.imgfoto.host/2025/06/10/i-3.jpeg" 
+                         alt="Разводка тёплых полов" 
+                         class="service-img"
+                         style="object-position: center 30%;">
+                    <div class="service-content">
+                        <h3>Разводка тёплых полов</h3>
+                        <p>Монтаж водяных и электрических систем теплого пола с точной балансировкой контуров и подключением к управляющей автоматике.</p>
+                    </div>
+                </div>
+                
+                <!-- Разводка электрики (УВЕЛИЧЕННОЕ ФОТО) -->
+                <div class="service-card">
+                    <img src="https://a.imgfoto.host/2025/06/10/XXXL.jpeg" 
+                         alt="Разводка электрики" 
+                         class="service-img large-photo"
+                         style="object-position: center 30%;">
+                    <div class="service-content">
+                        <h3>Разводка электрики</h3>
+                        <p>Полный комплекс электромонтажных работ: от проектирования схемы до прокладки кабелей и установки распределительных коробок.</p>
+                    </div>
+                </div>
+                
+                <!-- Установка электрощитов -->
+                <div class="service-card">
+                    <img src="https://a.imgfoto.host/2025/06/10/diploma.webp" 
+                         alt="Установка электрощитов" 
+                         class="service-img doc-img">
+                    <div class="service-content">
+                        <h3>Установка электрощитов</h3>
+                        <p>Сборка и монтаж распределительных щитов с автоматами защиты, УЗО, реле напряжения и другими компонентами защиты.</p>
+                    </div>
+                </div>
+                
+                <!-- Установка розеток и выключателей -->
+                <div class="service-card">
+                    <img src="https://a.imgfoto.host/2025/06/10/70ff83d874f508d4f7549008771fe46d.jpeg" 
+                         alt="Установка розеток и выключателей" 
+                         class="service-img"
+                         style="object-position: center 30%;">
+                    <div class="service-content">
+                        <h3>Установка розеток и выключателей</h3>
+                        <p>Монтаж всех типов электроустановочных изделий с соблюдением норм безопасности и эргономики размещения.</p>
+                    </div>
+                </div>
+                
+                <!-- Монтаж скважинных насосов -->
+                <div class="service-card">
+                    <img src="https://a.imgfoto.host/2025/06/10/orig29d63909005f83ca.jpeg" 
+                         alt="Монтаж скважинных насосов" 
+                         class="service-img"
+                         style="object-position: center 25%;">
+                    <div class="service-content">
+                        <h3>Монтаж скважинных насосов</h3>
+                        <p>Установка глубинных насосов, монтаж автоматики управления, настройка систем водоснабжения от скважины.</p>
+                    </div>
+                </div>
+                
+                <!-- Установка септиков (УВЕЛИЧЕННОЕ ФОТО) -->
+                <div class="service-card">
+                    <img src="https://a.imgfoto.host/2025/06/10/diploma.jpeg" 
+                         alt="Установка септиков" 
+                         class="service-img large-photo doc-img">
+                    <div class="service-content">
+                        <h3>Установка септиков</h3>
+                        <p>Профессиональный монтаж локальных очистных сооружений с гарантией качества работ и соблюдением всех санитарных норм.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact-form">
+            <h2>Остались вопросы?</h2>
+            <p style="text-align: center; margin-bottom: 20px;">Заполните форму и я свяжусь с вами в течение 2 часов</p>
+            
+            <form class="contact-form" action="https://formspree.io/f/ваша_уникальная_ссылка" method="POST">
+                <h3 class="form-title">Форма обратной связи</h3>
+                
+                <div class="form-group">
+                    <label for="name">Ваше имя *</label>
+                    <input type="text" id="name" name="name" required placeholder="Иванов Иван">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Ваш e-mail *</label>
+                    <input type="email" id="email" name="email" required placeholder="example@mail.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Ваш номер телефона</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 (999) 123-45-67">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Сообщение *</label>
+                    <textarea id="message" name="message" required placeholder="Опишите вашу проблему или задайте вопрос"></textarea>
+                </div>
+                
+                <div class="privacy-check">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <label for="privacy">
+                        Я согласен с 
+                        <a href="privacy-policy.html" class="privacy-link" target="_blank">
+                            политикой конфиденциальности
+                        </a>
+                    </label>
+                </div>
+                
+                <button type="submit" class="submit-btn">Отправить сообщение</button>
+            </form>
+        </section>
+        
+        <section id="contact">
+            <h2>Контакты</h2>
+            <p style="text-align: center;">Для срочных вопросов свяжитесь со мной напрямую:</p>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>Телефон</h3>
+                    <p><a href="tel:+79221007042 ">+7 (922) 100-70-42</a></p>
+                    <p>Работаю с 9:00 до 18:00</p>
+                    <a href="tel:+79221007042" class="btn">Позвонить</a>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>Электронная почта</h3>
+                    <p><a href="mailto:unicolor@mail.ru">unicolor@mail.ru</a></p>
+                    <p>Отвечаю в течение рабочего дня</p>
+                    <a href="mail:unicolor@mail.ru" class="btn">Написать</a>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>Мессенджеры</h3>
+                    <p><a href="https://wa.me/79221007042" target="_blank">WhatsApp</a></p>
+                    <p><a href="https://t.me/@Vadimych77" target="_blank">Telegram</a></p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Никитин Вадим Сергеевич. Все права защищены.</p>
+            <p>Профессиональные инженерные решения для вашего комфорта</p>
+            <p>ИП Никитин В.С. ОГРНИП 1234567890123</p>
+            <p>
+                <a href="privacy-policy.html" class="policy-link" target="_blank">
+                    Политика конфиденциальности
+                </a>
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Реальная политика конфиденциальности (скрытый контент) -->
+    <div id="privacy-policy-content" style="display: none;">
+        <h1>Политика конфиденциальности</h1>
+        <p>1. Общие положения<br>
+        Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных, предпринимаемые ИП Никитин В.С.</p>
+        
+        <p>2. Основные понятия<br>
+        Оператор - государственный орган, муниципальный орган, юридическое или физическое лицо, самостоятельно или совместно с другими лицами организующие и (или) осуществляющие обработку персональных данных.</p>
+        
+        <p>3. Обрабатываемые данные<br>
+        • ФИО<br>
+        • Номер телефона<br>
+        • Адрес электронной почты</p>
+        
+        <p>4. Цели обработки данных<br>
+        • Обработка обращений и заявок<br>
+        • Предоставление услуг клиентам</p>
+    </div>
+    
+    <script>
+        // Реализация политики конфиденциальности
+        document.addEventListener('DOMContentLoaded', function() {
+            // Проверяем, если пользователь перешел по якорю #privacy-policy
+            if (window.location.hash === '#privacy-policy') {
+                // Создаем модальное окно
+                const modal = document.createElement('div');
+                modal.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.8);
+                    z-index: 1000;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 20px;
+                    overflow: auto;
+                `;
+                
+                // Содержимое политики
+                const policyContent = document.createElement('div');
+                policyContent.style.cssText = `
+                    background: white;
+                    padding: 30px;
+                    border-radius: 8px;
+                    max-width: 800px;
+                    max-height: 90vh;
+                    overflow: auto;
+                `;
+                policyContent.innerHTML = document.getElementById('privacy-policy-content').innerHTML;
+                
+                // Кнопка закрытия
+                const closeButton = document.createElement('button');
+                closeButton.textContent = 'Закрыть';
+                closeButton.style.cssText = `
+                    display: block;
+                    margin: 20px auto 0;
+                    padding: 10px 20px;
+                    background: #005f73;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                `;
+                closeButton.onclick = function() {
+                    document.body.removeChild(modal);
+                    history.replaceState(null, null, ' ');
+                };
+                
+                policyContent.appendChild(closeButton);
+                modal.appendChild(policyContent);
+                document.body.appendChild(modal);
+                
+                // Блокируем прокрутку фона
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    </script>
+</body>
+</html>
